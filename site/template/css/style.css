@@ -1,0 +1,28 @@
+body
+    {width: 570px; 
+    margin:0 auto; background:#F8F8FF;}
+label
+    {display: block; float: left; width: 120px;
+    padding: 0 10px; margin: 18px 0 0; text-align: center;}
+#submit
+    {float:right; margin:5px 200px 10px 0;}
+TABLE 
+    {width: 540px; /* Ширина таблицы */
+    border: 1px solid black; /* Рамка вокруг таблицы */}
+TD, TH 
+    {padding: 2px; /* Поля вокруг содержимого ячеек */
+    border: 1px solid black;}
+TH 
+    {text-align: center; /* Выравнивание по левому краю */
+    background: white; /* Цвет фона */
+    color: black; /* Цвет текста */
+    position: static;}
+header 
+    {word-spacing: 1px;}
+footer 
+    {width: 150%; /* ширина футера */
+    height: 50px; /* высота */
+    position: static; /* абсолютное позиционирование */
+    bottom: 0; /* прижимаем к нижнему краю обертки */
+    color: #fff;
+    background: #000;}
