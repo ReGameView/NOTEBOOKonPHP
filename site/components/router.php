@@ -1,6 +1,6 @@
 <?php
 
-class Router
+class router
 {
 
 	private $routes;

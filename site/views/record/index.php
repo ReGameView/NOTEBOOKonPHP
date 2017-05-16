@@ -1,56 +1,54 @@
 <html>
 <head>
 <title>Записная книжка</title>
-<link href="/template/css/style.css" rel="stylesheet" type="text/css" media="screen" />
+<!--<link href="/template/css/style.css" rel="stylesheet" type="text/css" media="screen" />-->
+    <style>
+        tbody tr:hover /* Строка */
+        {
+            background: #bfbfbf; /* Цвет фона при наведении */
+            color: black; /* Цвет текста при наведении */
+        }
+        tbody td:hover /* Столбец */
+        {
+            background: white; /* Цвет фона при наведении */
+            color: black; /* Цвет текста при наведении */
+        }
+    </style>
 </head>
 <body>
-<a href="record">Главное меню</a>
-<a href="archive">Добавление записи</a>
-<a href="view">Показать все записи</a><br>
-<a href="file">Переход на файловое хранилище</a>
-<div align="right">
-    <?php
-    $check = false;
-    echo  "<form action=\"/record\" method=\"post\">";
-    echo  "</select><br />\n";
-    echo  "<input type=\"text\" name=\"search\" value=\"\" placeholder='Поиск' >";
-    echo  "<input type=\"submit\" value=\"Поиск\" /><br />";
-    echo  "</form>";
-    if(!$_POST){
-        ;
-    }else{
-        $check = true;
-        $search =  htmlspecialchars($_POST['search']);
-        Db::acceptSearch($search);
-    }
-    ?>
+<div class="col-md-3">
 </div>
+<div class="col-md-4">
 <h1>Записная книжка</h1>
 <fieldset>
 <table>
-    <tr><th>Имя</th><th>Телефон</th><th>Адрес</th><th>email</th></tr>
-<?php
+    <tr><th>Имя</th><th>Телефон</th><th>Адрес</th><th>email</th></tr> <tbody>
+        <?php
 $a = false;
-if($check == true):
-    echo "<h3>Запрос: $search</h3>";
-    $a = Db::acceptSearch($search);
-        foreach ($a as $recordItem): ?>
-            <tr><th><?php echo $recordItem['name']; ?></th><th><?php echo $recordItem['mobile'];?></th><th><?php echo $recordItem['address']?></th><th><?php echo $recordItem['email']?></th></tr>
-    <?php endforeach; endif;
-if($check == false)
 foreach ($recordList as $recordItem):?>
-    <tr><th><?php echo $recordItem['name']; ?></th><th><?php echo $recordItem['mobile'];?></th><th><?php echo $recordItem['address']?></th><th><?php echo $recordItem['email']?></th></tr>
+    <tr onmouseenter="anim(event, 'black')" onmouseleave="anim(event, 'white')" id="1">
+        <td>
+            <?=$recordItem['name']; ?></td><td>
+            <?=$recordItem['mobile'];?></td><td>
+            <?=$recordItem['address']?></td><td>
+            <?=$recordItem['email']?>
+        </td>
+    </tr>
 <?php endforeach; ?>
+</tbody>
 </table>
 <?php
-if($check == false){
 $row = Db::pageRecord();
 for($i=0;$i != $row;$i++) {
     $j = $i + 1;
-    echo "<a href='$j'>$j</a> ";
-}
+//    echo "<a href='$j'>$j</a> ";
 }
 ?>
 </fieldset>
 </body>
 </html>
+</div>
+<div class="col-md-4">
+</div>
+<textarea id="text"></textarea>
+

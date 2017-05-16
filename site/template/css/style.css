@@ -1,6 +1,13 @@
-body
-    {width: 570px; 
-    margin:0 auto; background:#F8F8FF;}
+/*body*/
+/*{*/
+    /*width: 570px;*/
+    /*margin:0 auto; */
+    /*background:#F8F8FF;*/
+/*}*/
+header
+{
+    background-image: url("../images/header.jpg");
+}
 label
     {display: block; float: left; width: 120px;
     padding: 0 10px; margin: 18px 0 0; text-align: center;}
