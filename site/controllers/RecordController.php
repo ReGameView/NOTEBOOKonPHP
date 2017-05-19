@@ -4,10 +4,10 @@ include_once ROOT. '/models/Record.php';
 
 class RecordController {
 
-	public function actionIndex($id)
+	public function actionIndex()
 	{
 		$recordList = array();
-		$recordList = Record::getRecordList($id);
+		$recordList = Record::getAllRecord();
         require_once(ROOT . '/views/record/index.php');
 		return true;
 	}

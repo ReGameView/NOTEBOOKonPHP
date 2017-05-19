@@ -9,27 +9,58 @@ header
     background-image: url("../images/header.jpg");
 }
 label
-    {display: block; float: left; width: 120px;
-    padding: 0 10px; margin: 18px 0 0; text-align: center;}
+{
+    display: block; float: left; width: 120px;
+    padding: 0 10px; margin: 18px 0 0; text-align: center;
+}
 #submit
-    {float:right; margin:5px 200px 10px 0;}
-TABLE 
-    {width: 540px; /* Ширина таблицы */
-    border: 1px solid black; /* Рамка вокруг таблицы */}
+{
+    float:right; margin:5px 200px 10px 0;
+}
+TABLE
+{
+    width: 700px; /* Ширина таблицы */
+    border: 1px solid black; /* Рамка вокруг таблицы */
+}
 TD, TH 
-    {padding: 2px; /* Поля вокруг содержимого ячеек */
-    border: 1px solid black;}
+{
+    text-align: center; /* Выравнивание по левому краю */
+    padding: 2px; /* Поля вокруг содержимого ячеек */
+    border: 1px solid black;
+}
 TH 
-    {text-align: center; /* Выравнивание по левому краю */
+{
+    text-align: center; /* Выравнивание по левому краю */
     background: white; /* Цвет фона */
     color: black; /* Цвет текста */
-    position: static;}
+    position: static;
+}
 header 
-    {word-spacing: 1px;}
+{
+    word-spacing: 1px;
+}
 footer 
-    {width: 150%; /* ширина футера */
+{
+    width: 150%; /* ширина футера */
     height: 50px; /* высота */
     position: static; /* абсолютное позиционирование */
     bottom: 0; /* прижимаем к нижнему краю обертки */
     color: #fff;
-    background: #000;}
+    background: #000;
+}
+tbody tr:hover /* Строка */
+{
+    /*background: #bfbfbf; !* Цвет фона при наведении *!*/
+    color: black; /* Цвет текста при наведении */
+}
+tbody td:hover /* Столбец */
+{
+    background: #4d94ff; /* Цвет фона при наведении */
+    color: black; /* Цвет текста при наведении */
+}
+button:hover
+{
+    color: white;
+    background-color: black;
+    cursor: pointer;
+}

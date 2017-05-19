@@ -2,53 +2,42 @@
 <head>
 <title>Записная книжка</title>
 <!--<link href="/template/css/style.css" rel="stylesheet" type="text/css" media="screen" />-->
-    <style>
-        tbody tr:hover /* Строка */
-        {
-            background: #bfbfbf; /* Цвет фона при наведении */
-            color: black; /* Цвет текста при наведении */
-        }
-        tbody td:hover /* Столбец */
-        {
-            background: white; /* Цвет фона при наведении */
-            color: black; /* Цвет текста при наведении */
-        }
-    </style>
 </head>
 <body>
-<div class="col-md-3">
+<div class="col-md-2">
 </div>
-<div class="col-md-4">
+<div class="col-md-10">
 <h1>Записная книжка</h1>
 <fieldset>
 <table>
-    <tr><th>Имя</th><th>Телефон</th><th>Адрес</th><th>email</th></tr> <tbody>
+    <tr><th>Имя</th><th>Телефон</th><th>Адрес</th><th>email</th><th>Действия</th></th></tr> <tbody>
         <?php
 $a = false;
 foreach ($recordList as $recordItem):?>
-    <tr onmouseenter="anim(event, 'black')" onmouseleave="anim(event, 'white')" id="1">
+    <tr>
         <td>
             <?=$recordItem['name']; ?></td><td>
             <?=$recordItem['mobile'];?></td><td>
             <?=$recordItem['address']?></td><td>
-            <?=$recordItem['email']?>
+            <?=$recordItem['email']?></td><td>
+            <button id="message" class='glyphicon glyphicon-envelope'>
+            </button> <!--  Первая кнопка. Просмотр личной информации  -->
+            <button id="button2" class='glyphicon glyphicon-level-up'>
+            </button> <!--  Вторая кнопка. Просмотр друзей  -->
+            <button id="button2" class='glyphicon glyphicon-remove'>
+            </button> <!--  Третья кнопка. Удалить запись  -->
         </td>
     </tr>
 <?php endforeach; ?>
+    <script>
+        document.getElementById('message').onclick = function() {
+            alert('Спасибо')
+        }
+    </script>
 </tbody>
 </table>
-<?php
-$row = Db::pageRecord();
-for($i=0;$i != $row;$i++) {
-    $j = $i + 1;
-//    echo "<a href='$j'>$j</a> ";
-}
-?>
 </fieldset>
 </body>
 </html>
 </div>
-<div class="col-md-4">
-</div>
-<textarea id="text"></textarea>
 
