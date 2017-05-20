@@ -2,7 +2,10 @@
 define('limit',6);
 class Db
 {
-
+    /**
+     * Выполняет подключение к Базе Данных
+     * @return PDO
+     */
     public static function getConnection()
 		{
 			$paramsPath = ROOT . '/config/db_params.php';
@@ -15,6 +18,10 @@ class Db
 			return $db;
 		}
 
+    /**
+     * Добавление записи в Базу Данных, средствами PDO.
+     * @param $add
+     */
     public static function addRecord($add)
     {
         $paramsPath = ROOT . '/config/db_params.php';
@@ -29,16 +36,11 @@ class Db
         );
         }
 
-    public static function pageRecord()
-    {
-        $connection = Db::getConnection();
-        $count = $connection->query('SELECT COUNT(*) FROM test');
-        $row = $count->fetch();
-        $row[0] = $row[0] / limit;
-        $page=ceil($row[0]);
-        return $page;
-        }
-
+    /**
+     * Проверка на обязательное заполнение данных
+     * @param $add - Добавленные данные
+     * @return bool|int - Номер ошибки или false
+     */
     public static function retryAdd($add)
     {
         $connection = Db::getConnection();
@@ -60,15 +62,5 @@ class Db
             }
         }
         return $check;
-    }
-
-    public static function acceptSearch($search)
-    {
-        $all = array();
-        $connect = Db::getConnection();
-        $a = $connect->query("SELECT * FROM `test` WHERE `name` LIKE \"%$search%\" OR (`mobile` LIKE \"%$search%\" OR (`address` LIKE \"%$search%\" OR (`email` LIKE \"%$search%\" )))");
-        while ($b = $a->fetch()){
-        $all[] = $b;}
-        return $all;
     }
 }

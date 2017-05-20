@@ -1,3 +1,8 @@
+<?php
+/**
+ * Представление для пользователя для вывода главного меню
+ */
+?>
 <html>
 <head>
 <title>Записная книжка</title>
@@ -19,7 +24,7 @@ foreach ($recordList as $recordItem):?>
             <?=$recordItem['name']; ?></td><td>
             <?=$recordItem['mobile'];?></td><td>
             <?=$recordItem['address']?></td><td>
-            <?=$recordItem['email']?></td><td>
+            <a href="mailto:<?=$recordItem['email']?>"><?=$recordItem['email']?></a></td><td>
             <button id="message" class='glyphicon glyphicon-envelope'>
             </button> <!--  Первая кнопка. Просмотр личной информации  -->
             <button id="button2" class='glyphicon glyphicon-level-up'>

@@ -1,5 +1,7 @@
 <?php
-
+/**
+ * Данные о Базе Данных
+ */
 return array(
 			'host' => 'localhost',
 			'dbname' => 'test',

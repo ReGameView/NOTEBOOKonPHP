@@ -1,4 +1,10 @@
 <?php
+/**
+ * @magic
+ * Не трогай! It's Magic.
+ * Включает всю эту сложную схему
+ * @magic
+ */
 ini_set('display_errors', 1);
 error_reporting(E_ALL);
 define('ROOT', dirname(__FILE__));

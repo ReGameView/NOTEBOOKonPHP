@@ -2,16 +2,20 @@
 
 class router
 {
-
 	private $routes;
-
+    /**
+     * router constructor.
+     */
 	public function __construct()
 	{
 		$routesPath = ROOT.'/config/routes.php';
 		$this->routes = include($routesPath);
 	}
 
-// Return type
+    /**
+     * @return string Полученный сайт, который выйзывает пользователь. Пример:
+     * example/site/index/
+     */
 
 	private function getURI()
 	{
@@ -21,6 +25,9 @@ class router
 		}
 	}
 
+    /**
+     * Производит распределение по Controller'у и Action
+     */
 	public function run()
 	{
 		$uri = $this->getURI();

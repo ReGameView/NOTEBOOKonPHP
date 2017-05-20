@@ -1,9 +1,14 @@
 <?php
-
+/**
+ * Основной контроллер
+ */
 include_once ROOT. '/models/Record.php';
 
 class RecordController {
-
+    /**
+     * Вывод всех записей в Базе Данных
+     * @return bool
+     */
 	public function actionIndex()
 	{
 		$recordList = array();
@@ -12,6 +17,10 @@ class RecordController {
 		return true;
 	}
 
+    /**
+     * Просмотр конкретного пользователя
+     * @return bool
+     */
 	public function actionView()
     {
         $recordList = array();
@@ -20,6 +29,10 @@ class RecordController {
         return true;
     }
 
+    /**
+     * Добавление в базу данных
+     * @return bool
+     */
     public function actionArchive()//$add)
     {
         $recordList = array();
