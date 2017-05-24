@@ -21,10 +21,10 @@ class RecordController {
      * Просмотр конкретного пользователя
      * @return bool
      */
-	public function actionView()
+	public function actionView($id)
     {
-        $recordList = array();
-        $recordList = Record::getAllRecord();
+        $record = array();
+        $record = Record::getRecord($id);
         require_once(ROOT . '/views/record/view.php');
         return true;
     }

@@ -11,8 +11,7 @@ class Db
 			$paramsPath = ROOT . '/config/db_params.php';
 			$params = include($paramsPath);
 
-
-			$dsn = "mysql:host={$params['host']};dbname={$params['dbname']}";
+			$dsn = "mysql:host={$params['host']};dbname={$params['dbname']};'utf8'";
 			$db = new PDO($dsn, $params['user'], $params['password']);
 
 			return $db;
@@ -27,13 +26,17 @@ class Db
         $paramsPath = ROOT . '/config/db_params.php';
         $params = include($paramsPath);
         $connection = Db::getConnection();
-        $a=$connection->prepare("INSERT INTO {$params['dbname']} (name, mobile, address, email) VALUES (:name, :mobile, :address, :email)");
+        $a=$connection->prepare("INSERT INTO {$params['dbname']} (id, first_name, family_name, birthday, mobile, address, work, web-site) VALUES (:id, :first_name, :family_name, :birthday, :mobile, :address, :work, :web-site)");
         $a->execute(array(
-            'name' => $add['name'],
+            'id' => $add['id'],
+            'first_name' => $add['first_name'],
+            'family_name' => $add['family_name'],
+            'birthday' => $add['birthday'],
             'mobile' => $add['mobile'],
-            'address' => $add['address'],
-            'email' => $add['email'],)
-        );
+            'addresss' => $add['addresss'],
+            'work' => $add['work'],
+            'web-site' => $add['web-site'],
+                ));
         }
 
     /**

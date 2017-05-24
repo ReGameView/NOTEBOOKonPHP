@@ -1,12 +1,8 @@
-/*body*/
-/*{*/
-    /*width: 570px;*/
-    /*margin:0 auto; */
-    /*background:#F8F8FF;*/
-/*}*/
-header
+    header
 {
+    text-align: right;
     background-image: url("../images/header.jpg");
+    background-size: 100%;
 }
 label
 {
@@ -48,19 +44,26 @@ footer
     color: #fff;
     background: #000;
 }
+button:hover
+    {
+        color: white;
+        background-color: black;
+        cursor: pointer;
+    }
 tbody tr:hover /* Строка */
 {
-    /*background: #bfbfbf; !* Цвет фона при наведении *!*/
-    color: black; /* Цвет текста при наведении */
+    background: #4d94aa; /* Цвет фона при наведении */
+    color: #b3ffb3; /* Цвет текста при наведении */
 }
-tbody td:hover /* Столбец */
+tbody td a:hover /* Столбец */
 {
-    background: #4d94ff; /* Цвет фона при наведении */
-    color: black; /* Цвет текста при наведении */
-}
-button:hover
-{
-    color: white;
-    background-color: black;
+    link: black;
+    list-style: black;
     cursor: pointer;
+    background: #4d94ff; /* Цвет фона при наведении */
+    color: #b3ffb3; /* Цвет текста при наведении */
+}
+
+a{
+    color: black;
 }
